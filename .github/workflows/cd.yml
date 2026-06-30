@@ -1,0 +1,24 @@
+name: CD Docker Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  docker-build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        working-directory: 40213014
+        run: docker build -t digital-bank-app .
+
+      - name: Run Docker image
+        run: docker run digital-bank-app
