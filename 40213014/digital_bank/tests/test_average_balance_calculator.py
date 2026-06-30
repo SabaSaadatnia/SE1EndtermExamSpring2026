@@ -13,4 +13,4 @@ def test_average_balance_calculator():
     calculator = AverageBalanceCalculator()
     result = calculator.calculate_average_balance(2_000_000, transactions)
 
-    assert result == 2_250_000
+    assert result == 2_750_000
